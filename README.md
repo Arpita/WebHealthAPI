@@ -1,4 +1,11 @@
-HealthAPIs
-==========
+Health and Wellness Web API
+===========================
 
-Health and Wellness Web APIs
+Creating Health and Wellness APIs for Web platform.
+
+Documents in this repository
+----------------------------
+
+* [Use Cases and Security Requirements](http://http://arpita.github.io/WebHealthAPI/UseCases.html)
+
+
