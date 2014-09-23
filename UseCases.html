@@ -12,141 +12,41 @@
 </HEAD>
 <BODY LANG="en-IN" DIR="LTR">
 <P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif" color="rgb(23,54,94)" size=5><B>Health and Wellness Web API - Use Cases</B></FONT></P>
+
 <HR>
-<P><BR>
-</P>
-<H3>Overview:</H3>
+<P><BR></P>
+
+<H3>1. Introduction:</H3>
 <P STYLE="margin-bottom: 0cm">With the advent of smartphones and other 'connected' wearable devices hosting various health sensors, a revolution in healthcare is in the making; paving the way for realizing endless possibilities such as real-time patient and doctor interaction, assisted care, at-home disease management etc. Economical, patient-centric solutions can now be easily made available thereby promoting general health and wellness of users.</P>
 <P STYLE="margin-bottom: 0cm">Most of the services though are currently limited to the realm of 'native' applications that interact with the health sensors, collate and classify the information and make it available for further consumption.</P>
 <P STYLE="margin-bottom: 0cm">It is estimated that by 2017, there will be 1.4 billion mobile sensing health and fitness app downloads worldwide [1]. Combine these facts with the growing popularity of Web Apps and the Internet of Things fast becoming a reality, and we are left with a gaping need for Web APIs for dealing with Health and Wellness mobile sensing data.
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
+<P STYLE="margin-bottom: 0cm"><BR></P>
 
-<H3>Proposal:</H3>
-<P STYLE="margin-bottom: 0cm">The <B>contact</B> meta extension defines the vendor's contact information by way of a phone number (such as a customer support number), an e-mail ID (such as the customer support mail ID) or a physical address (such as the office address or billing address). 
-</P>
-<P STYLE="margin-bottom: 0cm">UAs displaying a page containing this meta extension could then make this contact information directly available for the user’s perusal.</P>
-<P STYLE="margin-bottom: 0cm">Often visitors have to hunt through a
-vendor's site for obtaining the customer support mail ID, phone
-number etc. which is mostly hidden behind a not so prominently
-displayed &quot;Help&quot; or &quot;Contact Us&quot; link.</P>
-<P STYLE="margin-bottom: 0cm">Vendor's specifying their registered
-mail ID, phone number and/or their address via this meta extension
-can thus expect supporting UAs to present the contact information to the
-user in an easily accessible format, either by way of a browser menu
-option (such as &quot;mail&quot;, “call”, “map”) or via the
-URL bar scheme handler or in another similar format.</P>
-<P STYLE="margin-bottom: 0cm">Selecting these menu options, if
-available, should launch the default mail application with the
-specified mail ID, the dialer application with the given contact
-number or, the default maps application loaded with the specified
-address/location tag respectively.</P>
-<P STYLE="margin-bottom: 0cm">No known existing meta extensions with
-a similar name/intention exist.</P>
-<P STYLE="margin-bottom: 0cm"> </P>
-
-<H3>Syntax:</H3>
-<P class="example"><code>&lt;meta name=&quot;<B>contact</B>&quot;
-content=&quot;+1-555-555-5555 abc@xyz.com '5844 South Oak Street, Chicago, Illinois' &quot;&gt;</code></P>
-<P STYLE="margin-bottom: 0cm">The content attribute for the
-contact meta extension is a space separated string containing the phone-number followed by the e-mail ID and then the address (specified within quotes).</P>
-<P STYLE="margin-bottom: 0cm">Or</P>
-<P class="example"><code>&lt;meta name=&quot;<B>contact</B>&quot;
-content=&quot;Chicago: +1-555-555-5555  abc@xyz.com '5844 South Oak Street, Chicago, Illinois'; Brookfield: +1-444-444-4444 def@xyz.com '2341 Cherry Lane, Brookfield, Illinois'; Naperville: +1-333-333-3333 jkl@xyz.com '515 W. Jefferson, Naperville, Illinois 60540'&quot;&gt;</code></P>
-<P STYLE="margin-bottom: 0cm">For specifying multiple entries a semi-colon separated list of name: value pairs can be defined. The name can be any descriptive tag identifying the given location.</P>
-<P STYLE="margin-bottom: 0cm">Valid phone numbers and mail IDs should be provided by the vendor. The address can either be a string specified within quotes or the latitude and longtitude coordinates.</p>
-<P class="example"><code>&lt;meta name=&quot;<B>contact</B>&quot;
-content=&quot;Chicago: +1-555-555-5555  abc@xyz.com '20.593684;78.96288'; Brookfield: +1-444-444-4444 def@xyz.com '20.593684;78.96288'; Naperville: +1-333-333-3333 jkl@xyz.com '20.593684;78.96288'&quot;&gt;</code></P>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
-
-
-<H3><a name="drawings">Drawings:</a></H3>
-<img src="CallOption.jpg" width="800px"/>
-<P STYLE="margin-top: 0.21cm"><FONT SIZE=3><I>Selecting the Call
-option for the site icicibank.com should launch the dialer
-application with the given contact-number.</I></FONT></P>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
-<img src="MailOption.jpg" width="800px"/>
-<P STYLE="margin-top: 0.21cm"><FONT SIZE=3><I>Selecting the Mail
-option should navigate; and launch the chosen mailing app with the
-specified contact-mail.</I></FONT></P>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
-<img src="MapOption.jpg" width="800px"/>
-<P STYLE="margin-top: 0.21cm"><FONT SIZE=3><I>Selecting the Map
-option should launch the specified contact-address on the default map
-application.</I></FONT></P>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
-
-<H3>Use Case (for multiple contact numbers, mail IDs
-and addresses):</H3>
-<P STYLE="margin-bottom: 0cm">We take the example of a banking
-website. In case of international banks (e.g. Citibank) we are posed
-with the challenge of enlisting all their contact details, spread
-across different nations.</P>
-<P STYLE="margin-bottom: 0cm">Vendors mostly maintain granularity at
-a national level, redirecting the users to the country specific
-website automatically. This would be handled at the server itself
-wherein different pages shall be pushed based on the requesting IP.
-The website author can thus deliver country specific information to
-the users.</P>
-<P STYLE="margin-bottom: 0cm">However, the bank will also have
-multiple offices throughout the country and multiple branches within
-the same city. The website author shall have to provide all the
-information regarding the bank’s various locations and
-corresponding customer care numbers and mail IDs. This forms the
-basis for having a syntax that is capable of accommodating multiple
-entries for contact numbers, mail IDs or addresses.</P>
-<P STYLE="margin-bottom: 0cm">The UA could list down all the
-available options thereby enabling the user to make an informed
-choice.</P>
-<P STYLE="margin-bottom: 0cm">An option for filtering the available
-options (based on the name) can also be provided to the end user.</P>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
-
-<H3>Use Case (for geo-fencing):</H3>
-<P STYLE="margin-bottom: 0cm">Consider the same example of a banking
-website wherein the bank has several branches located within the same
-city. It would be highly beneficial to the user in such cases if the
-UA were to display the nearest branch address based on the user’s
-current location.</P>
-<P STYLE="margin-bottom: 0cm">The user’s location information (if
-available) can be retrieved by the UA and the same can then be used
-to predict the nearest branch office from the list of the available
-offices. Corresponding contact-number too (if available) can be
-extracted (if specified with the same ‘name’).</P>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
-
-<H3><a name="manifest">As part of the Manifest:</a></H3>
-<P STYLE="margin-bottom: 0cm">Considering the aforementioned use
-cases, we are now faced with the possibility of having lengthy
-contact number and/or address lists being specified in meta tags.
-This would unnecessarily make the markup cumbersome and lengthy. 
-</P>
-<P STYLE="margin-bottom: 0cm">Instead, we could specify these values
-as part of the new json based Manifest
-[<A HREF="http://w3c.github.io/manifest/">http://w3c.github.io/manifest/</A>].</P>
-<P STYLE="margin-bottom: 0cm">The name-value pairs can easily be
-defined in the json format and since the Manifest would ideally not
-be updated as often as the main resource it thus offers to be a more
-optimal solution.</P>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
-
-<H3>As an HTML tag:</H3>
-<P STYLE="margin-bottom: 0cm">The contact information can also be provided via an HTML tag: &lt;contact&gt;. As an HTML tag, the complexities arising due to mapping of contact information to a particular location, can be avoided.</P>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
-
-<H3>Future enhancements:</H3>
-<P STYLE="margin-bottom: 0cm">Provision for one click, WebRTC based sessions between the client and the vendor, thereby enhancing accessibility.</P>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
+<H3>2. Use-Cases:</H3>
+<P STYLE="margin-bottom: 0cm">Following are some of the use-cases or guidelines that can help define Health and Wellness APIs for the Web platform.</P>
+<H4>2.1 Third party writes a web page/app to read and display information from a health sensor.</H4>
+<P STYLE="margin-bottom: 0cm">A company, perhaps the one manufacturing the health sensor, would like to present the readings to the user via their web page/app. The app could also process the requested data to provide specific services to the user. The web page/app should be able to do so by simply requesting the said data via a Javascript API.</P>
+<H4>2.2 Provision for setting of Health and Wellness data.</H4>
+<P STYLE="margin-bottom: 0cm">If the platform supports hosting a common database for the user's health and wellness statistics, APIs should be made available for setting of</P>
+<H4>2.3 Classification of Health and Wellness data.</H4>
+<P STYLE="margin-bottom: 0cm"></P>
+<H4>2.4 Provision for specifying the units for the requested data.</H4>
+<P STYLE="margin-bottom: 0cm">The device should be able to specify in which units it measured the requested data. Provision should also be made for specifying the units in which the data is measured.</P>
+<H4>2.5 Data specified along with timestamps.</H4>
+<P STYLE="margin-bottom: 0cm">A device/sensor should be able to transmit data along with a timestamp (specifying when the reading was taken). This shall be useful in scenarios when a web app wishes to track a specific health metric over a period of time.</P>
+<H4>2.6 Multiple sensors registered for reading the same information.</H4>
+<P STYLE="margin-bottom: 0cm">It is possible to have multiple sensors measuring and registering similar health data. For example, a device's native heart rate monitor and another connected device, such as a FitBit, could both be measuring the user's heart rate. When such data is queried for, the User Agent may provide the user with an option to select the device from which to read the data.</P>
+<H4>2.7 Live data vs pre-recorded data.</H4>
+<P STYLE="margin-bottom: 0cm">Provision should be made for querying either pre-recorded data or live/real-time readings with the web page/app. Different APIs can be defined for querying either type of data. However, for sharing real-time readings, the User Agent should be able to turn on the requested device, request for the desired reading, and then transmit the same back to the requesting web page/app. Provision for sending the data asynchronously should be made.</P>
+<P STYLE="margin-bottom: 0cm">Example, a web page/app requests for the weight metric. The User Agent should be able to turn on the 'connected' device registered for measuring the weight. The user should then be able to take the readings using the connected device. Once done, the readings should then be transmitted back to the calling web page asynchronously.</P>
+<P STYLE="margin-bottom: 0cm">Also, perhaps this requires a timeout value after which the requesting web page/app should stop polling for/waiting on the data.</P>
+<H4>2.8 Transmitting continuous readings.</H4>
+<P STYLE="margin-bottom: 0cm">Provision should be made for transmitting readings that are spread across a range, such as an ECG reading. A website should be able to continuously poll for such data similar to Geolocation's watchPosition() API.</P>
+<H4>2.9 Device advertised URL opened by user and syncing of data between paired website and device/sensor.</H4>
+<P STYLE="margin-bottom: 0cm">Devices may advertise a URL for the convenience of users who wish to interact. Launching an advertised URL loads a website with the device already paired and available for communication. For example, syncing of readings from a Gear (smartwatch) after a run.</P>
+<H4>2.10 Conditional watchers.</H4>
+<P STYLE="margin-bottom: 0cm"></P>
+<P STYLE="margin-bottom: 0cm"><BR></P>
 
 <P class="issues">Feedback is most welcome! Please post any issues or comments regarding this <a href="https://github.com/Arpita/ContactMetaExtensions/issues">here</a>!</P>
 <P STYLE="margin-bottom: 0cm"><BR>
