@@ -55,8 +55,8 @@
 <P>Provision should be made for transmitting readings that are spread across a range, such as an ECG reading. A website should be able to continuously poll for such data similar to Geolocation's watchPosition() API.</P>
 <H4>2.9 Device advertised URL opened by user and syncing of data between paired website and device/sensor.</H4>
 <P>Devices may advertise a URL for the convenience of users who wish to interact. Launching an advertised URL loads a website with the device already paired and available for communication. For example, syncing of readings from a Gear (smartwatch) after a run.</P>
-<H4>2.10 Conditional watchers.</H4>
-<P></P>
+<H4>2.10 Observers and Conditional watchers.</H4>
+<P>A web application may register itself as an observer for changes of any health data. Example, when the user's blood pressure touches any specific level, the registered applications can be notified.</P>
 <P><BR></P>
 
 <H3><a name="req">Requirements:</a></H3>
