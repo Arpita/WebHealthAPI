@@ -20,20 +20,20 @@
 
 <H3>Table of Contents</H3>
 <ul>
-<li>1. <a href="#">Introduction</a></li>
-<li>2. <a href="#">Use-Cases</a></li>
-<li>3. <a href="#">Requirements</a></li>
-<li>4. <a href="#">Security and Privacy considerations</a></li>
-<li>A. <a href="#">References</a></li>
+<li>1. <a href="#intro">Introduction</a></li>
+<li>2. <a href="#usecases">Use-Cases</a></li>
+<li>3. <a href="#req">Requirements</a></li>
+<li>4. <a href="#security">Security and Privacy considerations</a></li>
+<li>A. <a href="#ref">References</a></li>
 </ul>
 
-<H3>1. Introduction:</H3>
+<H3><a name="intro">1. Introduction:</a></H3>
 <P>With the advent of smartphones and other 'connected' wearable devices hosting various health sensors, a revolution in healthcare is in the making; paving the way for realizing endless possibilities such as real-time patient and doctor interaction, assisted care, at-home disease management etc. Economical, patient-centric solutions can now be easily made available thereby promoting general health and wellness of users.</P>
 <P>Most of the services though are currently limited to the realm of 'native' applications that interact with the health sensors, collate and classify the information and make it available for further consumption.</P>
 <P>It is estimated that by 2017, there will be 1.4 billion mobile sensing health and fitness app downloads worldwide [1]. Combine these facts with the growing popularity of Web Apps and the Internet of Things fast becoming a reality, and we are left with a gaping need for Web APIs for dealing with Health and Wellness mobile sensing data.
 <P><BR></P>
 
-<H3>2. Use-Cases:</H3>
+<H3><a name="usecases">2. Use-Cases:</a></H3>
 <P>Following are some of the use-cases or guidelines that can help define Health and Wellness APIs for the Web platform.</P>
 <H4>2.1 Third party writes a web page/app to read and display information from a health sensor.</H4>
 <P>A company, perhaps the one manufacturing the health sensor, would like to present the readings to the user via their web page/app. The app could also process the requested data to provide specific services to the user. The web page/app should be able to do so by simply requesting the said data via a Javascript API.</P>
@@ -59,18 +59,18 @@
 <P></P>
 <P><BR></P>
 
-<H3>Requirements:</H3>
+<H3><a name="req">Requirements:</a></H3>
 <P>1. The Health API must allow access websites access to devices they know how to interact with.</P>
 <P>2. The Health API should be able to pair a site with a device based on previous user action linking the two.</P>
 <P>3. When requesting for health info, the User Agent must always obtain user's confirmation for the same (unless the specific pairing has previously been granted the permission of 'always share' by the user).</P>
 <P><BR></P>
 
-<H3>Security and Privacy considerations:</H3>
+<H3><a name="security">Security and Privacy considerations:</a></H3>
 <P>The developer can comply with international law such as HIPAA (Health Insurance Portability and Accountability Act) proposed to protect personal health information. According to the law, personal health information can be provided to a 3rd party only if the information owner has agreed. Also, the owner can request the history of information requests.</P>
 <P>The User Agent should seek permission before sharing any health related information with the querying web page/app. Options such as 'always share', 'never share' and provision for session based sharing should be made available to the user.</P>
 <P><BR></P>
 
-<H3>A. References:</H3>
+<H3><a name="ref">A. References:</a></H3>
 <P>[1] <a href="http://onworld.com/mobilesensing/health/">ONworld Survey</a></P>
 <P>[2] <a href="http://www.hipaa.com/">HIPAA</a></P>
 
