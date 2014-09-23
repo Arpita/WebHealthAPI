@@ -8,6 +8,7 @@
         body { margin-left: 90px; margin-right: 90px; margin-bottom: 50px;}	
         .example { margin-left: 100px; margin-right: 120px; background-color: rgb(191,223,255); border-style: none none none solid; border-width: 0 0 0 0.3rem; border-color: rgb(23,54,94); }
         .issues  { position: fixed; height: 50px; bottom: 0px; left: margin-left: 100px; margin-right: 120px; background-color: rgb(252,207,211); border-style: none none none solid; border-width: 0 0 0 0.3rem; border-color: rgb(245,112,125); }
+	p { margin-bottom: 0cm; }
 	</STYLE>
 </HEAD>
 <BODY LANG="en-IN" DIR="LTR">
@@ -16,51 +17,62 @@
 <HR>
 <P><BR></P>
 
+<H3>Table of Contents</H3>
+<p style="padding-left: 20px">1. <a href="#">Introduction</a></p>
+<p style="padding-left: 20px">2. <a href="#">Use-Cases</a></p>
+<p style="padding-left: 20px">3. <a href="#">Requirements</a></p>
+<p style="padding-left: 20px">4. <a href="#">Security and Privacy considerations</a></p>
+<p style="padding-left: 20px">A. <a href="#">References</a></p>
+
 <H3>1. Introduction:</H3>
-<P STYLE="margin-bottom: 0cm">With the advent of smartphones and other 'connected' wearable devices hosting various health sensors, a revolution in healthcare is in the making; paving the way for realizing endless possibilities such as real-time patient and doctor interaction, assisted care, at-home disease management etc. Economical, patient-centric solutions can now be easily made available thereby promoting general health and wellness of users.</P>
-<P STYLE="margin-bottom: 0cm">Most of the services though are currently limited to the realm of 'native' applications that interact with the health sensors, collate and classify the information and make it available for further consumption.</P>
-<P STYLE="margin-bottom: 0cm">It is estimated that by 2017, there will be 1.4 billion mobile sensing health and fitness app downloads worldwide [1]. Combine these facts with the growing popularity of Web Apps and the Internet of Things fast becoming a reality, and we are left with a gaping need for Web APIs for dealing with Health and Wellness mobile sensing data.
-<P STYLE="margin-bottom: 0cm"><BR></P>
+<P>With the advent of smartphones and other 'connected' wearable devices hosting various health sensors, a revolution in healthcare is in the making; paving the way for realizing endless possibilities such as real-time patient and doctor interaction, assisted care, at-home disease management etc. Economical, patient-centric solutions can now be easily made available thereby promoting general health and wellness of users.</P>
+<P>Most of the services though are currently limited to the realm of 'native' applications that interact with the health sensors, collate and classify the information and make it available for further consumption.</P>
+<P>It is estimated that by 2017, there will be 1.4 billion mobile sensing health and fitness app downloads worldwide [1]. Combine these facts with the growing popularity of Web Apps and the Internet of Things fast becoming a reality, and we are left with a gaping need for Web APIs for dealing with Health and Wellness mobile sensing data.
+<P><BR></P>
 
 <H3>2. Use-Cases:</H3>
-<P STYLE="margin-bottom: 0cm">Following are some of the use-cases or guidelines that can help define Health and Wellness APIs for the Web platform.</P>
+<P>Following are some of the use-cases or guidelines that can help define Health and Wellness APIs for the Web platform.</P>
 <H4>2.1 Third party writes a web page/app to read and display information from a health sensor.</H4>
-<P STYLE="margin-bottom: 0cm">A company, perhaps the one manufacturing the health sensor, would like to present the readings to the user via their web page/app. The app could also process the requested data to provide specific services to the user. The web page/app should be able to do so by simply requesting the said data via a Javascript API.</P>
+<P>A company, perhaps the one manufacturing the health sensor, would like to present the readings to the user via their web page/app. The app could also process the requested data to provide specific services to the user. The web page/app should be able to do so by simply requesting the said data via a Javascript API.</P>
 <H4>2.2 Provision for setting of Health and Wellness data.</H4>
-<P STYLE="margin-bottom: 0cm">If the platform supports hosting a common database for the user's health and wellness statistics, APIs should be made available for setting of</P>
+<P>If the platform supports hosting a common database for the user's health and wellness statistics, APIs should be made available for setting of</P>
 <H4>2.3 Classification of Health and Wellness data.</H4>
-<P STYLE="margin-bottom: 0cm"></P>
+<P></P>
 <H4>2.4 Provision for specifying the units for the requested data.</H4>
-<P STYLE="margin-bottom: 0cm">The device should be able to specify in which units it measured the requested data. Provision should also be made for specifying the units in which the data is measured.</P>
+<P>The device should be able to specify in which units it measured the requested data. Provision should also be made for specifying the units in which the data is measured.</P>
 <H4>2.5 Data specified along with timestamps.</H4>
-<P STYLE="margin-bottom: 0cm">A device/sensor should be able to transmit data along with a timestamp (specifying when the reading was taken). This shall be useful in scenarios when a web app wishes to track a specific health metric over a period of time.</P>
+<P>A device/sensor should be able to transmit data along with a timestamp (specifying when the reading was taken). This shall be useful in scenarios when a web app wishes to track a specific health metric over a period of time.</P>
 <H4>2.6 Multiple sensors registered for reading the same information.</H4>
-<P STYLE="margin-bottom: 0cm">It is possible to have multiple sensors measuring and registering similar health data. For example, a device's native heart rate monitor and another connected device, such as a FitBit, could both be measuring the user's heart rate. When such data is queried for, the User Agent may provide the user with an option to select the device from which to read the data.</P>
+<P>It is possible to have multiple sensors measuring and registering similar health data. For example, a device's native heart rate monitor and another connected device, such as a FitBit, could both be measuring the user's heart rate. When such data is queried for, the User Agent may provide the user with an option to select the device from which to read the data.</P>
 <H4>2.7 Live data vs pre-recorded data.</H4>
-<P STYLE="margin-bottom: 0cm">Provision should be made for querying either pre-recorded data or live/real-time readings with the web page/app. Different APIs can be defined for querying either type of data. However, for sharing real-time readings, the User Agent should be able to turn on the requested device, request for the desired reading, and then transmit the same back to the requesting web page/app. Provision for sending the data asynchronously should be made.</P>
-<P STYLE="margin-bottom: 0cm">Example, a web page/app requests for the weight metric. The User Agent should be able to turn on the 'connected' device registered for measuring the weight. The user should then be able to take the readings using the connected device. Once done, the readings should then be transmitted back to the calling web page asynchronously.</P>
-<P STYLE="margin-bottom: 0cm">Also, perhaps this requires a timeout value after which the requesting web page/app should stop polling for/waiting on the data.</P>
+<P>Provision should be made for querying either pre-recorded data or live/real-time readings with the web page/app. Different APIs can be defined for querying either type of data. However, for sharing real-time readings, the User Agent should be able to turn on the requested device, request for the desired reading, and then transmit the same back to the requesting web page/app. Provision for sending the data asynchronously should be made.</P>
+<P>Example, a web page/app requests for the weight metric. The User Agent should be able to turn on the 'connected' device registered for measuring the weight. The user should then be able to take the readings using the connected device. Once done, the readings should then be transmitted back to the calling web page asynchronously.</P>
+<P>Also, perhaps this requires a timeout value after which the requesting web page/app should stop polling for/waiting on the data.</P>
 <H4>2.8 Transmitting continuous readings.</H4>
-<P STYLE="margin-bottom: 0cm">Provision should be made for transmitting readings that are spread across a range, such as an ECG reading. A website should be able to continuously poll for such data similar to Geolocation's watchPosition() API.</P>
+<P>Provision should be made for transmitting readings that are spread across a range, such as an ECG reading. A website should be able to continuously poll for such data similar to Geolocation's watchPosition() API.</P>
 <H4>2.9 Device advertised URL opened by user and syncing of data between paired website and device/sensor.</H4>
-<P STYLE="margin-bottom: 0cm">Devices may advertise a URL for the convenience of users who wish to interact. Launching an advertised URL loads a website with the device already paired and available for communication. For example, syncing of readings from a Gear (smartwatch) after a run.</P>
+<P>Devices may advertise a URL for the convenience of users who wish to interact. Launching an advertised URL loads a website with the device already paired and available for communication. For example, syncing of readings from a Gear (smartwatch) after a run.</P>
 <H4>2.10 Conditional watchers.</H4>
-<P STYLE="margin-bottom: 0cm"></P>
-<P STYLE="margin-bottom: 0cm"><BR></P>
+<P></P>
+<P><BR></P>
 
 <H3>Requirements:</H3>
-<P STYLE="margin-bottom: 0cm">1. The Health API must allow access websites access to devices they know how to interact with.</P>
-<P STYLE="margin-bottom: 0cm">2. The Health API should be able to pair a site with a device based on previous user action linking the two.</P>
-<P STYLE="margin-bottom: 0cm">3. When requesting for health info, the User Agent must always obtain user's confirmation for the same (unless the specific pairing has previously been granted the permission of 'always share' by the user).</P>
-<P STYLE="margin-bottom: 0cm"><BR></P>
+<P>1. The Health API must allow access websites access to devices they know how to interact with.</P>
+<P>2. The Health API should be able to pair a site with a device based on previous user action linking the two.</P>
+<P>3. When requesting for health info, the User Agent must always obtain user's confirmation for the same (unless the specific pairing has previously been granted the permission of 'always share' by the user).</P>
+<P><BR></P>
 
 <H3>Security and Privacy considerations:</H3>
-<P STYLE="margin-bottom: 0cm">The developer can comply with international law such as HIPAA (Health Insurance Portability and Accountability Act) proposed to protect personal health information. According to the law, personal health information can be provided to a 3rd party only if the information owner has agreed. Also, the owner can request the history of information requests.</P>
-<P STYLE="margin-bottom: 0cm">The User Agent should seek permission before sharing any health related information with the querying web page/app. Options such as 'always share', 'never share' and provision for session based sharing should be made available to the user.</P>
-<P STYLE="margin-bottom: 0cm"><BR></P>
+<P>The developer can comply with international law such as HIPAA (Health Insurance Portability and Accountability Act) proposed to protect personal health information. According to the law, personal health information can be provided to a 3rd party only if the information owner has agreed. Also, the owner can request the history of information requests.</P>
+<P>The User Agent should seek permission before sharing any health related information with the querying web page/app. Options such as 'always share', 'never share' and provision for session based sharing should be made available to the user.</P>
+<P><BR></P>
+
+<H3>A. References:</H3>
+<P>[1] ONWorld survey: http://onworld.com/mobilesensing/health/</P>
+<P>[2] HIPAA: http://www.hipaa.com/</P>
 
 <P class="issues">Feedback is most welcome! Please post any issues or comments regarding this <a href="https://github.com/Arpita/WebHealthAPI/issues">here</a>!</P>
-<P STYLE="margin-bottom: 0cm"><BR>
+<P><BR></P>
 
 </BODY>
 </HTML>
